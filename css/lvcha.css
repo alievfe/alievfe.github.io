@@ -1,0 +1,10 @@
+.tea h3{
+    font-size: 30px;
+    text-align: left;
+    margin-left: 20px;
+}
+
+.teamore {
+    display: flex;
+    flex-wrap: wrap;
+}
