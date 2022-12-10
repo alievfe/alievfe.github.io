@@ -1,0 +1,29 @@
+/* .bac_img {
+    margin:0px;
+    background: url(../img/bac2.jpeg) no-repeat;
+    background-size:100% 100%;
+    background-attachment:fixed;
+} */
+.site-nav li:nth-child(1){
+    border-bottom: 2px solid #9dce84;
+}
+
+#board {
+    width: 320px;
+    height: 320px;
+    position: relative;
+    /* overflow: hidden; */
+    background-color: #f6f6f6;
+}
+
+.card {
+    width: 320px;
+    height: 320px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border-radius: 1%;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    transform: translateX(-50%) translateY(-50%) scale(0.95);
+}

@@ -21,5 +21,6 @@ $(function () {
             }
         })
     })
+    $(document).scrollTop(1)
 
 })

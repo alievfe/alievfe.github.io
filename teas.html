@@ -2,162 +2,277 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>浙江茶叶网</title>
-    <link rel="stylesheet" href="./css/normalize.css">
-    <link rel="stylesheet" href="./font/iconfont.css">
-    <link rel="stylesheet" href="./css/base.css">
-    <link rel="stylesheet" href="./css/common.css">
-    <link rel="stylesheet" href="./css/teas.css">
-    <script src="./lib/jquery.js"></script>
-    <script src="./js/teas.js"></script>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>浙江茶叶网</title>
+  <link rel="stylesheet" href="./css/normalize.css">
+  <link rel="stylesheet" href="./font/iconfont.css">
+  <link rel="stylesheet" href="./css/base.css">
+  <link rel="stylesheet" href="./css/common.css">
+  <link rel="stylesheet" href="./css/teas.css">
+  <script src="./lib/jquery.js"></script>
+  <script src="./lib/ejs.js"></script>
+  <script src="./js/teas.js"></script>
 </head>
 
 <body>
-    <!-- header -->
-    <header class="header">
-        <i class="iconfont icon-menu"></i>
-        <div class="logo">
-            <a title="浙江茶叶网" href="index.html"><img src="./img/tea-logo.png" alt="">
-                <div class="titlename">
-                    <a href="index.html">浙江茶叶</a>
-                </div>
-            </a>
+  <!-- header -->
+  <header class="header">
+    <i class="iconfont icon-menu"></i>
+    <div class="logo">
+      <a title="浙江茶叶网" href="index.html"><img src="./img/tea-logo.png" alt="">
+        <div class="titlename">
+          <a href="index.html">浙江茶叶</a>
         </div>
+      </a>
+    </div>
 
-        <ul class="site-nav">
-            <li><a href="index.html">首页</a></li>
-            <li><a href="teas.html">茶叶总览</a></li>
-            <li><a href="tec.html">加工技术</a></li>
-            <li><a href="rec.html">购买推荐</a></li>
-            <li><a href="about.html">关于本站</a></li>
-        </ul>
-        <i class="iconfont icon-elipsis"></i>
-    </header>
-    <!-- center -->
-    <section class="center_body">
-        <div class="seconNav">
-            <div class=" tea pannel">
-                <h2>绿茶</h2>
-                <div class="line"></div>
-                <div class="detailCat">
-                    <ul>
-                        <li>
-                            <div class="oneCat">
-                                <img class="singleimg" src="./uploads/teaCats/1.jpg" alt="">
-                            <h3>西湖龙井</h3>
-                            <div class="orgplace">产地:<span>杭州</span></div>
-                            <a rel=noopener target="_blank" href="https://baike.baidu.com/item/%E8%A5%BF%E6%B9%96%E9%BE%99%E4%BA%95/412851">点击查看详情</a>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="oneCat">
-                                <img class="singleimg" src="./uploads/teaCats/2.jpg" alt="">
-                            <h3>大佛龙井</h3>
-                            <div class="orgplace">产地:<span>绍兴</span></div>
-                            <a rel=noopener target="_blank" href="https://baike.baidu.com/item/%E5%A4%A7%E4%BD%9B%E9%BE%99%E4%BA%95">点击查看详情</a>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="oneCat">
-                                <img class="singleimg" src="./uploads/teaCats/3.jpg" alt="">
-                            <h3>开化龙顶</h3>
-                            <div class="orgplace">产地:<span>衢州</span></div>
-                            <a rel=noopener target="_blank" href="https://baike.baidu.com/item/%E5%BC%80%E5%8C%96%E9%BE%99%E9%A1%B6%E8%8C%B6/2236354">点击查看详情</a>
-
-                            </div>
-                        </li>
-                        <li>
-                            <div class="oneCat">
-                                <img class="singleimg" src="./uploads/teaCats/4.jpg" alt="">
-                            <h3>武阳春雨</h3>
-                            <div class="orgplace">产地:<span>金华</span></div>
-                            <a rel=noopener target="_blank" href="https://baike.baidu.com/item/%E6%AD%A6%E9%98%B3%E6%98%A5%E9%9B%A8">点击查看详情</a>
-
-                            </div>
-                        </li>
-                    </ul>
-                </div>
+    <ul class="site-nav">
+      <li><a href="home.html">首页</a></li>
+      <li><a href="teas.html">茶叶总览</a></li>
+      <li><a href="tec.html">加工技术</a></li>
+      <li><a href="rec.html">购买推荐</a></li>
+      <li><a href="about.html">关于本站</a></li>
+    </ul>
+    <i class="iconfont icon-elipsis"></i>
+  </header>
+  <!-- center -->
+  <section class="center_body">
+    <div class="seconNav">
+      <div class=" tea pannel">
+        <h2>插入茶叶种类</h2>
+        <div class="line"></div>
+        <div class="detailCat">
+          <form action="#" id="addtea">
+            <div class="leftform">
+              <div class="oneform">
+                <label for="teaname">茶叶名称: </label>
+                <input type="text" name="teaname" id="teaname" placeholder="输出茶叶名称">
+              </div>
+              <div class="oneform">
+                <label for="origin">茶叶产地: </label>
+                <input type="text" name="origin" id="origin" placeholder="输入茶叶产地">
+              </div>
+              <div class="oneform">
+                <label for="teaimgurl">茶叶图片: </label>
+                <input type="text" name="teaimgurl" id="teaimgurl" placeholder="输入图片URL(空则随机图片)">
+              </div>
+              <div class="oneform">
+                <label for="teacate">茶叶品种: </label>
+                <select id="teacate" name="teacate">
+                  <option value="0">--请选择茶叶品种--</option>
+                  <option>绿茶</option>
+                  <option>红茶</option>
+                  <option>白茶</option>
+                  <option>黄茶</option>
+                </select>
+                <div class="warningnull">茶叶品种为必选项！</div>
+              </div>
             </div>
-            <div class=" tea pannel">
-                <h2>红茶</h2>
-                <div class="line"></div>
-                <div class="detailCat">
-                    <ul>
-                        <li>
-                            <div class="oneCat">
-                                <img class="singleimg" src="./uploads/teaCats/5.jpg" alt="">
-                            <h3>越红工夫</h3>
-                            <div class="orgplace">产地:<span>绍兴</span></div>
-                            <a rel=noopener target="_blank" href="https://baike.baidu.com/item/%E8%B6%8A%E7%BA%A2%E5%B7%A5%E5%A4%AB%E8%8C%B6/9133164">点击查看详情</a>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="oneCat">
-                                <img class="singleimg" src="./uploads/teaCats/6.jpg" alt="">
-                            <h3>九曲红梅</h3>
-                            <div class="orgplace">产地:<span>杭州</span></div>
-                            <a rel=noopener target="_blank" href="https://baike.baidu.com/item/%E4%B9%9D%E6%9B%B2%E7%BA%A2%E6%A2%85">点击查看详情</a>
-                            </div>
-                        </li>
-                        
-                    </ul>
-                </div>
+            <div class="rightform">
+              <div class="oneform">
+                <label for="briefIntro">茶叶简介: </label>
+                <textarea name="briefIntro" id="briefIntro" placeholder="请输入茶叶简介"></textarea>
+              </div>
             </div>
-            <div class="tea pannel">
-                <h2>白茶</h2>
-                <div class="line"></div>
-                <div class="detailCat">
-                    <ul>
-                        <li>
-                            <div class="oneCat">
-                                <img class="singleimg" src="./uploads/teaCats/7.jpg" alt="">
-                            <h3>安吉白茶</h3>
-                            <div class="orgplace">产地:<span>湖州</span></div>
-                            <a rel=noopener target="_blank" href="https://baike.baidu.com/item/%E5%AE%89%E5%90%89%E7%99%BD%E8%8C%B6/339510">点击查看详情</a>
-                            </div>
-                        </li>
-                        
-                    </ul>
-                </div>
-            </div>
-            <div class="tea pannel">
-                <h2>黄茶</h2>
-                <div class="line"></div>
-                <div class="detailCat">
-                    <ul>
-                        <li>
-                            <div class="oneCat">
-                                <img class="singleimg" src="./uploads/teaCats/8.jpg" alt="">
-                            <h3>平阳黄汤</h3>
-                            <div class="orgplace">产地:<span>温州</span></div>
-                            <a rel=noopener target="_blank" href="https://baike.baidu.com/item/%E5%B9%B3%E9%98%B3%E9%BB%84%E6%B1%A4%E8%8C%B6">点击查看详情</a>
-                            </div>
-                        </li>
-                        
-                        <li>
-                            <div class="oneCat">
-                                <img class="singleimg" src="./uploads/teaCats/9.jpg" alt="">
-                            <h3>莫干黄芽</h3>
-                            <div class="orgplace">产地:<span>湖州</span></div>
-                            <a rel=noopener target="_blank" href="https://baike.baidu.com/item/%E8%8E%AB%E5%B9%B2%E9%BB%84%E8%8A%BD">点击查看详情</a>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="oneCat">
-                                <img class="singleimg" src="./uploads/teaCats/10.jpg" alt="">
-                            <h3>缙云黄茶</h3>
-                            <div class="orgplace">产地:<span>丽水</span></div>
-                            <a rel=noopener target="_blank" href="https://baike.baidu.com/item/%E7%BC%99%E4%BA%91%E9%BB%84%E8%8C%B6">点击查看详情</a>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
+          </form>
+          <a class="submit" href="javascript:;">提交</a>
         </div>
-    </section>
+        <div class="line"></div>
+      </div>
+
+      <div class=" tea pannel">
+        <h2>绿茶</h2>
+        <div class="line"></div>
+        <div class="detailCat">
+          <ul id="lv">
+            <li>
+              <div class="oneCat chooseinfo">
+                <img class="singleimg" src="./uploads/teaCats/1.jpg" alt="">
+                <h3>西湖龙井</h3>
+                <div class="orgplace">产地:<span>杭州</span></div>
+                <a rel=noopener target="_blank"
+                  href="https://baike.baidu.com/item/%E8%A5%BF%E6%B9%96%E9%BE%99%E4%BA%95/412851">点击查看详情</a>
+                <div class="infotext">
+                  <h3>简介</h3>
+                  <p>
+                    西湖龙井茶其产于浙江省杭州市西湖龙井村周围群山，并因此得名，具有1200多年历史。
+                  </p>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="oneCat">
+                <img class="singleimg" src="./uploads/teaCats/2.jpg" alt="">
+                <h3>大佛龙井</h3>
+                <div class="orgplace">产地:<span>绍兴</span></div>
+                <a rel=noopener target="_blank"
+                  href="https://baike.baidu.com/item/%E5%A4%A7%E4%BD%9B%E9%BE%99%E4%BA%95">点击查看详情</a>
+                  <div class="infotext">
+                    <h3>简介</h3>
+                    <p>
+                      大佛龙井选用高山无公害良种茶园的幼嫩芽叶，外形扁平光滑、尖削挺直，色泽绿翠匀润，香气嫩香持久，汤色黄绿明亮叶底细嫩，具有典型的高山茶风味。
+                    </p>
+                  </div>
+              </div>
+            </li>
+            <li>
+              <div class="oneCat">
+                <img class="singleimg" src="./uploads/teaCats/3.jpg" alt="">
+                <h3>开化龙顶</h3>
+                <div class="orgplace">产地:<span>衢州</span></div>
+                <a rel=noopener target="_blank"
+                  href="https://baike.baidu.com/item/%E5%BC%80%E5%8C%96%E9%BE%99%E9%A1%B6%E8%8C%B6/2236354">点击查看详情</a>
+                  <div class="infotext">
+                    <h3>简介</h3>
+                    <p>
+                      开化龙顶茶茶采于清明、谷雨间，选取长势旺盛健壮枝梢上的一芽一叶或一芽二叶初展为原料。为中国的名茶新秀。
+                    </p>
+                  </div>
+              </div>
+            </li>
+            <li>
+              <div class="oneCat">
+                <img class="singleimg" src="./uploads/teaCats/4.jpg" alt="">
+                <h3>武阳春雨</h3>
+                <div class="orgplace">产地:<span>金华</span></div>
+                <a rel=noopener target="_blank"
+                  href="https://baike.baidu.com/item/%E6%AD%A6%E9%98%B3%E6%98%A5%E9%9B%A8">点击查看详情</a>
+                  <div class="infotext">
+                    <h3>简介</h3>
+                    <p>
+                      武阳春雨具有独特的品质特征“甜、绵、软”。外形肥壮挺直，绿润鲜活；汤色嫩绿明亮；香气清高馥郁，带花果香；滋味甜醇甘鲜；叶底嫩匀绿亮。
+                    </p>
+                  </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="line"></div>
+      </div>
+      <div class=" tea pannel">
+        <h2>红茶</h2>
+        <div class="line"></div>
+        <div class="detailCat">
+          <ul id="hong">
+            <li>
+              <div class="oneCat">
+                <img class="singleimg" src="./uploads/teaCats/5.jpg" alt="">
+                <h3>越红工夫</h3>
+                <div class="orgplace">产地:<span>绍兴</span></div>
+                <a rel=noopener target="_blank"
+                  href="https://baike.baidu.com/item/%E8%B6%8A%E7%BA%A2%E5%B7%A5%E5%A4%AB%E8%8C%B6/9133164">点击查看详情</a>
+                  <div class="infotext">
+                    <h3>简介</h3>
+                    <p>
+                      越红工夫茶以条索紧结挺直，得实匀齐，锋、苗、显，净度高的优美外形称著。茶索紧细挺直，色泽乌润，外形优美，内质香味纯正，汤色红亮较浅。
+                    </p>
+                  </div>
+              </div>
+            </li>
+            <li>
+              <div class="oneCat">
+                <img class="singleimg" src="./uploads/teaCats/6.jpg" alt="">
+                <h3>九曲红梅</h3>
+                <div class="orgplace">产地:<span>杭州</span></div>
+                <a rel=noopener target="_blank"
+                  href="https://baike.baidu.com/item/%E4%B9%9D%E6%9B%B2%E7%BA%A2%E6%A2%85">点击查看详情</a>
+                  <div class="infotext">
+                    <h3>简介</h3>
+                    <p>
+                      西湖龙井茶其产于浙江省杭州市西湖龙井村周围群山，并因此得名，具有1200多年历史。
+                    </p>
+                  </div>
+              </div>
+            </li>
+
+          </ul>
+        </div>
+        <div class="line"></div>
+      </div>
+      <div class="tea pannel">
+        <h2>白茶</h2>
+        <div class="line"></div>
+        <div class="detailCat">
+          <ul id="bai">
+            <li>
+              <div class="oneCat">
+                <img class="singleimg" src="./uploads/teaCats/7.jpg" alt="">
+                <h3>安吉白茶</h3>
+                <div class="orgplace">产地:<span>湖州</span></div>
+                <a rel=noopener target="_blank"
+                  href="https://baike.baidu.com/item/%E5%AE%89%E5%90%89%E7%99%BD%E8%8C%B6/339510">点击查看详情</a>
+                  <div class="infotext">
+                    <h3>简介</h3>
+                    <p>
+                      安吉白茶外形挺直略扁，形如兰蕙；色泽翠绿，白毫显露；叶芽如金镶碧鞘，内裹银箭，十分可人。冲泡后，清香高扬且持久。滋味鲜爽，饮毕，唇齿留香，回味甘而生津。叶底嫩绿明亮，芽叶朵朵可辨。
+                    </p>
+                  </div>
+              </div>
+            </li>
+
+          </ul>
+        </div>
+        <div class="line"></div>
+      </div>
+      <div class="tea pannel">
+        <h2>黄茶</h2>
+        <div class="line"></div>
+        <div class="detailCat">
+          <ul id="huang">
+            <li>
+              <div class="oneCat">
+                <img class="singleimg" src="./uploads/teaCats/8.jpg" alt="">
+                <h3>平阳黄汤</h3>
+                <div class="orgplace">产地:<span>温州</span></div>
+                <a rel=noopener target="_blank"
+                  href="https://baike.baidu.com/item/%E5%B9%B3%E9%98%B3%E9%BB%84%E6%B1%A4%E8%8C%B6">点击查看详情</a>
+                  <div class="infotext">
+                    <h3>简介</h3>
+                    <p>
+                      西湖龙井茶其产于浙江省杭州市西湖龙井村周围群山，并因此得名，具有1200多年历史。
+                    </p>
+                  </div>
+              </div>
+            </li>
+
+            <li>
+              <div class="oneCat">
+                <img class="singleimg" src="./uploads/teaCats/9.jpg" alt="">
+                <h3>莫干黄芽</h3>
+                <div class="orgplace">产地:<span>湖州</span></div>
+                <a rel=noopener target="_blank"
+                  href="https://baike.baidu.com/item/%E8%8E%AB%E5%B9%B2%E9%BB%84%E8%8A%BD">点击查看详情</a>
+                  <div class="infotext">
+                    <h3>简介</h3>
+                    <p>
+                      莫干黄芽采自竹林。外形细紧略曲、嫩黄显毫；汤色嫩黄明亮；香气清甜；滋味甘醇；叶底嫩匀、嫩黄明亮。汤色嫩绿明亮；香气嫩香持久；滋味鲜爽甘醇；叶底嫩匀、绿明亮。
+                    </p>
+                  </div>
+              </div>
+            </li>
+            <li>
+              <div class="oneCat">
+                <img class="singleimg" src="./uploads/teaCats/10.jpg" alt="">
+                <h3>缙云黄茶</h3>
+                <div class="orgplace">产地:<span>丽水</span></div>
+                <a rel=noopener target="_blank"
+                  href="https://baike.baidu.com/item/%E7%BC%99%E4%BA%91%E9%BB%84%E8%8C%B6">点击查看详情</a>
+                  <div class="infotext">
+                    <h3>简介</h3>
+                    <p>
+                      西湖龙井茶其产于浙江省杭州市西湖龙井村周围群山，并因此得名，具有1200多年历史。
+                    </p>
+                  </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="line"></div>
+      </div>
+    </div>
+  </section>
 </body>
 
 </html>

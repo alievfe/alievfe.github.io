@@ -1,0 +1,85 @@
+[
+    {
+        "id": 1,
+        "teaname": "西湖龙井",
+        "origin": "杭州",
+        "teaimgurl": "./uploads/teaCats/1.jpg",
+        "teacate": "绿茶",
+        "briefIntro": "西湖龙井茶其产于浙江省杭州市西湖龙井村周围群山，并因此得名，具有1200多年历史。"
+    },
+    {
+        "id": 2,
+        "teaname": "大佛龙井",
+        "origin": "绍兴",
+        "teaimgurl": "./uploads/teaCats/2.jpg",
+        "teacate": "绿茶",
+        "briefIntro": "大佛龙井选用高山无公害良种茶园的幼嫩芽叶，外形扁平光滑、尖削挺直，色泽绿翠匀润，香气嫩香持久，汤色黄绿明亮叶底细嫩，具有典型的高山茶风味。"
+    },
+    {
+        "id": 3,
+        "teaname": "开化龙顶",
+        "origin": "衢州",
+        "teaimgurl": "./uploads/teaCats/3.jpg",
+        "teacate": "绿茶",
+        "briefIntro": "开化龙顶茶茶采于清明、谷雨间，选取长势旺盛健壮枝梢上的一芽一叶或一芽二叶初展为原料。为中国的名茶新秀。"
+    },
+    {
+        "id": 4,
+        "teaname": "武阳春雨",
+        "origin": "金华",
+        "teaimgurl": "./uploads/teaCats/4.jpg",
+        "teacate": "绿茶",
+        "briefIntro": "武阳春雨具有独特的品质特征“甜、绵、软”。外形肥壮挺直，绿润鲜活；汤色嫩绿明亮；香气清高馥郁，带花果香；滋味甜醇甘鲜；叶底嫩匀绿亮。"
+    },
+
+    {
+        "id": 5,
+        "teaname": "越红工夫",
+        "origin": "绍兴",
+        "teaimgurl": "./uploads/teaCats/5.jpg",
+        "teacate": "红茶",
+        "briefIntro": "越红工夫茶以条索紧结挺直，得实匀齐，锋、苗、显，净度高的优美外形称著。茶索紧细挺直，色泽乌润，外形优美，内质香味纯正，汤色红亮较浅。"
+    },
+    {
+        "id": 6,
+        "teaname": "九曲红梅",
+        "origin": "杭州",
+        "teaimgurl": "./uploads/teaCats/6.jpg",
+        "teacate": "红茶",
+        "briefIntro": "九曲红梅，又称“九曲乌龙”，简称“九曲红”，是西湖区另一大传统拳头产品，是红茶中的珍品。"
+    },
+
+    {
+        "id": 7,
+        "teaname": "安吉白茶",
+        "origin": "湖州",
+        "teaimgurl": "./uploads/teaCats/7.jpg",
+        "teacate": "白茶",
+        "briefIntro": "安吉白茶外形挺直略扁，形如兰蕙；色泽翠绿，白毫显露；叶芽如金镶碧鞘，内裹银箭。冲泡后清香高扬且持久，饮毕唇齿留香，回味甘而生津。"
+    },
+
+    {
+        "id": 8,
+        "teaname": "平阳黄汤",
+        "origin": "温州",
+        "teaimgurl": "./uploads/teaCats/8.jpg",
+        "teacate": "黄茶",
+        "briefIntro": "平阳黄汤茶，加工技艺纯熟，品质优异，风味独特，外形纤秀匀整，具有“干茶显黄，汤色杏黄、叶底嫩黄”的“三黄”特征。"
+    },
+    {
+        "id": 9,
+        "teaname": "莫干黄芽",
+        "origin": "湖州",
+        "teaimgurl": "./uploads/teaCats/9.jpg",
+        "teacate": "黄茶",
+        "briefIntro": "莫干黄芽外形细紧略曲、嫩黄显毫；汤色嫩黄明亮；香气清甜；叶底嫩匀、嫩黄明亮。汤色嫩绿。"
+    },
+    {
+        "id": 10,
+        "teaname": "缙云黄茶",
+        "origin": "丽水",
+        "teaimgurl": "./uploads/teaCats/10.jpg",
+        "teacate": "黄茶",
+        "briefIntro": "缙云黄茶，浙江省缙云县特产。"
+    }
+]

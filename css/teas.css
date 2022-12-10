@@ -5,86 +5,104 @@
 .pannel {
     opacity: 0
 }
+.line {
+    position: relative;
+    top: 0;
+    opacity: 0;
+    border-bottom: 2px solid #000;
+    width: 100%;
+    transition: all .4s;
+}
 .tea {
     position: relative;
     top: 0;
+    display: flex;
     justify-content: center;
     flex-direction: column;
     text-align: center;
     font-size: 20px;
     padding-bottom: 0;
+    border: none;
     transition: all .4s;
 }
 
 .tea h2 {
+    position: relative;
+    top: 0;
     font-size: 35px;
     padding: 0 30px;
     /* border: 2px solid transparent; */
     transition: all .4s;
 }
 
-.tea .line {
-    opacity: 0;
-    margin-top: 20px;
-    border-bottom: 2px solid #000;
-    width: 100%;
-    transition: all .4s;
-}
 
 .tea:hover {
+    top: -3px;
+}
+.tea:hover h2{
     box-shadow: 0 3px 8px rgb(0 0 0 / 20%);
     top: -3px;
 }
-
+.tea:hover .line{
+    box-shadow: 0 3px 8px rgb(0 0 0 / 20%);
+    top: -3px;
+}
 .tea:hover h2 {
     background-color: #000;
 }
-
 .tea:nth-child(1):hover h2 {
+    color: #fff;
+}
+.tea:nth-child(2):hover h2 {
     color: #9dce84;
 }
 
-.tea:nth-child(2):hover h2 {
+.tea:nth-child(3):hover h2 {
     color: #e25141;
 }
 
-.tea:nth-child(3):hover h2 {
+.tea:nth-child(4):hover h2 {
     color: #fff;
 }
 
-.tea:nth-child(4):hover h2 {
+.tea:nth-child(5):hover h2 {
     color: #ffca28;
 }
 
 .tea.current h2 {
     background-color: #000;
 }
-
 .tea:nth-child(1).current h2 {
+    color: #fff;
+}
+.tea:nth-child(2).current h2 {
     color: #9dce84;
 }
 
-.tea:nth-child(2).current h2 {
+.tea:nth-child(3).current h2 {
     color: #e25141;
 }
 
-.tea:nth-child(3).current h2 {
+.tea:nth-child(4).current h2 {
     color: #fff;
 }
 
-.tea:nth-child(4).current h2 {
+.tea:nth-child(5).current h2 {
     color: #ffca28;
 }
 
 .tea.current .line {
     opacity: 1;
 }
+.tea h2 {
+    cursor: pointer;
+}
 
 .detailCat {
     width: 100%;
     display: none;
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding-top: 40px;
+    padding-bottom: 10px;
 }
 
 .detailCat ul {
@@ -93,19 +111,82 @@
     flex-wrap: wrap;
     justify-content: space-evenly;
 }
-
+.detailCat ul .oneli {
+    position: relative;
+}
 .detailCat ul li {
+    width: 175px;
+    height: 240px;
+    position: relative;
+    overflow: hidden;
     margin: 0 10px;
-    padding: 10px;
+    padding: 10px 3px;
     border: 2px solid #000;
     margin-bottom: 20px;
+    cursor: pointer;
 }
 
-.detailCat ul li .singleimg {
+i.edit {
+    position: absolute;
+    top: 0;
+    left: 185px;
+    width: 10px;
+    height: 30px;
+    display: flex;
+    flex-direction: column;
+    background-color: #e25141;
+    transition: width .5s;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    z-index: 1;
+}
+i.delete {
+    position: absolute;
+    top: 30px;
+    left: 185px;
+    width: 10px;
+    height: 30px;
+    display: flex;
+    flex-direction: column;
+    background-color: #e25141;
+    transition: width .5s;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    z-index: 1;
+}
+
+i.edit:hover {
+    width: 30px;
+}
+i.edit:hover i {
+    opacity: 1;
+}
+i.delete:hover {
+    width: 30px;
+}
+i.delete:hover i {
+    opacity: 1;
+}
+i.edit, i.delete {
+    cursor: pointer;
+}
+i.edit i, i.delete i {
+    color: #fff;
+    line-height: 180%;
+    opacity: 0;
+    transition: all .5s;
+}
+
+.oneCat {
+    top: 0;
+    position: relative;
+    transition: all 1s;
+}
+
+.oneCat .singleimg {
     width: 150px;
     height: 120px;
 }
-
 .oneCat a {
     padding: 10px 5px 5px 5px;
     border-bottom: 2px solid #000;
@@ -113,4 +194,86 @@
 .oneCat a:hover {
     color: #000;
     font-weight: 700;
+}
+.oneCat .infotext {
+    margin-top: 10px;
+}
+.oneCat .infotext p {
+    padding: 0;
+    font-size: 16px;
+}
+.chooseinfo {
+    top: -235px;
+}
+
+
+.detailCat a.submit {
+    display: inline-block;
+    background: #c54c3e;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-weight: 700;
+    margin-top: 20px;
+    border: 2px solid transparent;
+    transition: all .25s;
+}
+
+.detailCat a.submit:hover {
+    color: #c54c3e;
+    background-color: #fff;
+    border: 2px solid #c54c3e;
+}
+.detailCat form {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.detailCat form label {
+    padding-right: 8px;
+}
+.detailCat form textarea {
+    resize: none;
+    height: 160px;
+    width: 200px;
+    font: 16px/1.5 "Helvetica Neue", Helvetica, Arial, "宋体", "Hiragino Sans GB", "Heiti sC", "WenQuanYi Micro Hei", sans-serif;
+    background-color: transparent;
+    
+}
+
+.detailCat form select {
+    font: 16px/1.5 "Helvetica Neue", Helvetica, Arial, "宋体", "Hiragino Sans GB", "Heiti sC", "WenQuanYi Micro Hei", sans-serif;
+
+}
+
+.detailCat form .leftform, .rightform {
+    display: flex;
+    width: 300px;
+    flex-direction: column;
+}
+.detailCat form .rightform .oneform {
+    flex-direction: column;
+} 
+.detailCat form .leftform input {
+    background-color: transparent;
+    height: 30px;
+    font: 16px/1.5 "Helvetica Neue", Helvetica, Arial, "宋体", "Hiragino Sans GB", "Heiti sC", "WenQuanYi Micro Hei", sans-serif;
+    border-bottom: 2px solid #000;
+}
+
+.detailCat form .oneform {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.warningnull {
+    position: absolute;
+    opacity: 0;
+    bottom: -25px;
+    left: 100px;
+    font-size: 14px;
+    color: red;
 }

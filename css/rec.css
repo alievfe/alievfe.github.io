@@ -1,17 +1,6 @@
-.site-nav ul li:nth-child(5){
+.site-nav li:nth-child(4){
     border-bottom: 2px solid #9dce84;
 }
-.under {
-    display: flex;
-    justify-content: space-between;
-}
-.left_content {
-    width: 825px;
-    padding-right: 15px ;
-}
-.right_content {
-    width: 360px;
-}
-.rec a {
-    color: red;
+.pannel {
+    opacity: 0;
 }
