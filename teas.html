@@ -39,6 +39,55 @@
   </header>
   <!-- center -->
   <section class="center_body">
+
+    <!-- dialog -->
+    <div class="md-modal md-teaedit">
+      <div class="md-content">
+        <h3>修改茶叶</h3>
+        <div class="md-form">
+          <form action="#" id="edittea">
+            <div class="leftform">
+              <div class="oneform">
+                <label for="e-teaname">茶叶名称: </label>
+                <input type="text" name="teaname" id="e-teaname" placeholder="输出茶叶名称">
+              </div>
+              <div class="oneform">
+                <label for="e-origin">茶叶产地: </label>
+                <input type="text" name="origin" id="e-origin" placeholder="输入茶叶产地">
+              </div>
+              <div class="oneform">
+                <label for="e-teaimgurl">茶叶图片: </label>
+                <input type="text" name="teaimgurl" id="e-teaimgurl" placeholder="输入图片URL(空则随机图片)">
+              </div>
+              <div class="oneform">
+                <label for="e-teacate">茶叶品种: </label>
+                <select id="e-teacate" name="teacate">
+                  <option value="0">--请选择茶叶品种--</option>
+                  <option>绿茶</option>
+                  <option>红茶</option>
+                  <option>白茶</option>
+                  <option>黄茶</option>
+                </select>
+                <div class="warningnull">茶叶品种为必选项！</div>
+              </div>
+            </div>
+            <div class="rightform">
+              <div class="oneform">
+                <label for="e-briefIntro">茶叶简介: </label>
+                <textarea name="briefIntro" id="e-briefIntro" placeholder="请输入茶叶简介"></textarea>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="bn-group">
+          <a href="javascript:;" class="md-close">关闭</a>
+          <a href="javascript:;" class="md-confirm">确认</a>
+        </div>
+      </div>
+    </div>
+    <!-- 覆盖图 -->
+    <div class="md-overlay"></div>
+
     <div class="seconNav">
       <div class=" tea pannel">
         <h2>插入茶叶种类</h2>

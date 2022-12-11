@@ -183,7 +183,19 @@ body {
     animation-play-state: paused;
 }
 
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
 
+::-webkit-scrollbar-track {
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: #ccc;
+}
 
 /*屏幕宽度小于1032px,改变布局和样式*/
 @media screen and (max-width:1060px) {
@@ -212,6 +224,10 @@ body {
 
     .content {
         align-self: baseline;
+    }
+
+    .md-form form {
+        flex-direction: column;
     }
 }
 

@@ -23,7 +23,7 @@ $(function () {
   //     $(this).parent('li').siblings('li').children('.oneCat').removeClass('chooseinfo')
   //     $(this).addClass('chooseinfo')
   // })
-  
+
   //点击滑出显示茶简介
   $('#lv, #hong, #bai, #huang').on('click', '.oneCat', function (e) {
     e.stopPropagation();
@@ -43,10 +43,9 @@ $(function () {
   //对select表单的警告
   $("select").change(function () {
     if ($(this).val() != '0')
-      $('.warningnull').css('opacity', '0')
+      $(this).siblings('.warningnull').css('opacity', '0')
     else
-      $('.warningnull').css('opacity', '1')
-
+      $(this).siblings('.warningnull').css('opacity', '1')
   });
 
   //表单add
@@ -54,29 +53,72 @@ $(function () {
     e.stopPropagation()
     let params = $('#addtea').serializeObject()
     if (params.teacate === '0') {
-      $('.warningnull').css('opacity', '1')
+      $('#addtea .warningnull').css('opacity', '1')
       return ''
     }
-    if (!params.teaimgurl){
+    if (!params.teaimgurl) {
       let timeStamp = new Date().getTime()
       params.teaimgurl = `https://bing.ioliu.cn/v1/rand?time=${timeStamp}`
     }
     let data = getLocalStorage()
-    let lastid = local[data.length-1].id
-    params.id = lastid+1
+    let lastid = data[data.length - 1].id
+    params.id = lastid + 1
     data.push(params)
     saveData(data)
     $('#addtea')[0].reset()
     load()
   })
 
+  /*dialog-modal*/
+  //modal
+  $('.md-modal').click(function (e) {
+    e.stopPropagation()
+  })
+
+
   //修改
+  var idToEdit
   $('#lv, #hong, #bai, #huang').on('click', 'i.edit', function (e) {
     e.stopPropagation()
-    let idToEdit = $(this).attr('data-id')
+    idToEdit = $(this).attr('data-id')
+    $('.md-teaedit').addClass('md-show')
     let data = getLocalStorage()
     const indexToEdit = data.findIndex(obj => obj.id == idToEdit);
-    console.log(data[indexToEdit]);
+    $('#e-teaname').val(data[indexToEdit].teaname)
+    $('#e-origin').val(data[indexToEdit].origin)
+    $('#e-teaimgurl').val(data[indexToEdit].teaimgurl)
+    $('#e-teacate').val(data[indexToEdit].teacate)
+    $('#e-briefIntro').val(data[indexToEdit].briefIntro)
+  })
+
+
+  //修改-确认按钮
+  $('.md-confirm').click(function (e) {
+    e.stopPropagation()
+    let params = $('#edittea').serializeObject()
+    if (params.teacate === '0') {
+      $('#addtea .warningnull').css('opacity', '1')
+      return ''
+    }
+    if (!params.teaimgurl) {
+      let timeStamp = new Date().getTime()
+      params.teaimgurl = `https://bing.ioliu.cn/v1/rand?time=${timeStamp}`
+    }
+    params.id = parseInt(idToEdit);
+    //改完后
+    let data = getLocalStorage()
+    const indexToEdit = data.findIndex(obj => obj.id == idToEdit);
+    data[indexToEdit] = params
+    saveData(data)
+    $('#edittea')[0].reset()
+    $('.md-teaedit').removeClass('md-show')
+    load()
+  })
+
+  //覆盖图点击
+  $('.md-overlay, .md-close').click(function (e) {
+    e.stopPropagation()
+    $('.md-teaedit').removeClass('md-show')
   })
 
   //删除

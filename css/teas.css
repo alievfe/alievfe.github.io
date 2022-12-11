@@ -5,6 +5,7 @@
 .pannel {
     opacity: 0
 }
+
 .line {
     position: relative;
     top: 0;
@@ -13,6 +14,7 @@
     width: 100%;
     transition: all .4s;
 }
+
 .tea {
     position: relative;
     top: 0;
@@ -39,20 +41,25 @@
 .tea:hover {
     top: -3px;
 }
-.tea:hover h2{
+
+.tea:hover h2 {
     box-shadow: 0 3px 8px rgb(0 0 0 / 20%);
     top: -3px;
 }
-.tea:hover .line{
+
+.tea:hover .line {
     box-shadow: 0 3px 8px rgb(0 0 0 / 20%);
     top: -3px;
 }
+
 .tea:hover h2 {
     background-color: #000;
 }
+
 .tea:nth-child(1):hover h2 {
     color: #fff;
 }
+
 .tea:nth-child(2):hover h2 {
     color: #9dce84;
 }
@@ -72,9 +79,11 @@
 .tea.current h2 {
     background-color: #000;
 }
+
 .tea:nth-child(1).current h2 {
     color: #fff;
 }
+
 .tea:nth-child(2).current h2 {
     color: #9dce84;
 }
@@ -94,6 +103,7 @@
 .tea.current .line {
     opacity: 1;
 }
+
 .tea h2 {
     cursor: pointer;
 }
@@ -111,9 +121,11 @@
     flex-wrap: wrap;
     justify-content: space-evenly;
 }
+
 .detailCat ul .oneli {
     position: relative;
 }
+
 .detailCat ul li {
     width: 175px;
     height: 240px;
@@ -140,6 +152,7 @@ i.edit {
     border-bottom-right-radius: 5px;
     z-index: 1;
 }
+
 i.delete {
     position: absolute;
     top: 30px;
@@ -158,19 +171,26 @@ i.delete {
 i.edit:hover {
     width: 30px;
 }
+
 i.edit:hover i {
     opacity: 1;
 }
+
 i.delete:hover {
     width: 30px;
 }
+
 i.delete:hover i {
     opacity: 1;
 }
-i.edit, i.delete {
+
+i.edit,
+i.delete {
     cursor: pointer;
 }
-i.edit i, i.delete i {
+
+i.edit i,
+i.delete i {
     color: #fff;
     line-height: 180%;
     opacity: 0;
@@ -187,21 +207,26 @@ i.edit i, i.delete i {
     width: 150px;
     height: 120px;
 }
+
 .oneCat a {
     padding: 10px 5px 5px 5px;
     border-bottom: 2px solid #000;
 }
+
 .oneCat a:hover {
     color: #000;
     font-weight: 700;
 }
+
 .oneCat .infotext {
     margin-top: 10px;
 }
+
 .oneCat .infotext p {
     padding: 0;
     font-size: 16px;
 }
+
 .chooseinfo {
     top: -235px;
 }
@@ -224,45 +249,51 @@ i.edit i, i.delete i {
     background-color: #fff;
     border: 2px solid #c54c3e;
 }
-.detailCat form {
+
+:is(.detailCat, .md-form) form {
     width: 100%;
     display: flex;
     justify-content: space-around;
     align-items: center;
 }
-.detailCat form label {
+
+:is(.detailCat, .md-form) form label {
     padding-right: 8px;
 }
-.detailCat form textarea {
+
+:is(.detailCat, .md-form) form textarea {
     resize: none;
     height: 160px;
     width: 200px;
     font: 16px/1.5 "Helvetica Neue", Helvetica, Arial, "宋体", "Hiragino Sans GB", "Heiti sC", "WenQuanYi Micro Hei", sans-serif;
     background-color: transparent;
-    
+
 }
 
-.detailCat form select {
+:is(.detailCat, .md-form) form select {
     font: 16px/1.5 "Helvetica Neue", Helvetica, Arial, "宋体", "Hiragino Sans GB", "Heiti sC", "WenQuanYi Micro Hei", sans-serif;
 
 }
 
-.detailCat form .leftform, .rightform {
+:is(.detailCat, .md-form) form .leftform,
+.rightform {
     display: flex;
     width: 300px;
     flex-direction: column;
 }
-.detailCat form .rightform .oneform {
+
+:is(.detailCat, .md-form) form .rightform .oneform {
     flex-direction: column;
-} 
-.detailCat form .leftform input {
+}
+
+:is(.detailCat, .md-form) form .leftform input {
     background-color: transparent;
     height: 30px;
     font: 16px/1.5 "Helvetica Neue", Helvetica, Arial, "宋体", "Hiragino Sans GB", "Heiti sC", "WenQuanYi Micro Hei", sans-serif;
     border-bottom: 2px solid #000;
 }
 
-.detailCat form .oneform {
+:is(.detailCat, .md-form) form .oneform {
     position: relative;
     display: flex;
     align-items: center;
@@ -276,4 +307,95 @@ i.edit i, i.delete i {
     left: 100px;
     font-size: 14px;
     color: red;
+}
+
+.md-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 50%;
+    max-width: 650px;
+    min-width: 320px;
+    height: auto;
+    z-index: 1500;
+    visibility: hidden;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+.md-content {
+    color: #000;
+    background-color: #fff;
+    position: relative;
+    margin: 0 auto;
+}
+
+.md-content h3 {
+    margin: 0;
+    padding: 5px;
+    text-align: center;
+    font-size: 30px;
+    font-weight: 700;
+    opacity: 0.8;
+    background: rgba(0, 0, 0, 0.05);
+}
+
+.md-content>div {
+    padding: 15px;
+}
+
+.md-content .bn-group {
+    display: flex;
+    justify-content: end;
+    margin: 0 auto;
+}
+
+.md-content .bn-group a {
+    display: inline-block;
+    background: #c54c3e;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-weight: 700;
+    margin-top: 20px;
+    border: 2px solid transparent;
+    transition: all .25s;
+}
+
+.md-content .bn-group a:hover {
+    color: #c54c3e;
+    background-color: #fff;
+    border: 2px solid #c54c3e;
+}
+
+.md-show {
+    visibility: visible;
+}
+
+.md-overlay {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    background: rgba(0, 0, 0, 0.2);
+    transition: all .3s;
+}
+
+.md-show~.md-overlay {
+    opacity: 1;
+    visibility: visible;
+}
+
+.md-teaedit .md-content{
+    transform: scale(0.8);
+    opacity: 0;
+    transition: all 0.4s;
+}
+
+.md-show.md-teaedit .md-content {
+    transform: scale(1);
+    opacity: 1;
 }
