@@ -23,7 +23,7 @@ $(function () {
         let password = data.split('&')[1].split('=')[1]
         if (username === user[0].name && password === user[0].password) {
             $.cookie('userlogin', data, { expires: 7, path: '/' });
-            location.href = './home.html'
+            location.href = '#/home'
         }
     })
 

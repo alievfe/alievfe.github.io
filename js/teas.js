@@ -18,11 +18,15 @@ $(function () {
       $(this).children('.detailCat').stop().slideUp();
     }
   })
-  // $('.oneCat').click(function (e) {
-  //     e.stopPropagation();
-  //     $(this).parent('li').siblings('li').children('.oneCat').removeClass('chooseinfo')
-  //     $(this).addClass('chooseinfo')
-  // })
+  //常驻的document点击，关闭所有面板
+  $(document).click(function (e) {
+    $(".tea").each(function (index, item) {
+      if ($(item).hasClass("current")) {
+        $('.tea').eq(index).click();
+      }
+    })
+    $('.chooseinfo').removeClass('chooseinfo')
+  })
 
   //点击滑出显示茶简介
   $('#lv, #hong, #bai, #huang').on('click', '.oneCat', function (e) {
@@ -52,7 +56,8 @@ $(function () {
   $('.submit').click(function (e) {
     e.stopPropagation()
     let params = $('#addtea').serializeObject()
-    if (params.teacate === '0') {
+    if (params.teacate === '0' || params.briefIntro === '' || params.origin === '' || params.teaname === '') {
+      if(params.teacate === '0')
       $('#addtea .warningnull').css('opacity', '1')
       return ''
     }
@@ -68,13 +73,14 @@ $(function () {
     $('#addtea')[0].reset()
     load()
   })
-
+  $('#addpanel').click(function(){
+    $('#addtea')[0].reset()
+  })
   /*dialog-modal*/
   //modal
   $('.md-modal').click(function (e) {
     e.stopPropagation()
   })
-
 
   //修改
   var idToEdit
@@ -93,11 +99,12 @@ $(function () {
 
 
   //修改-确认按钮
-  $('.md-confirm').click(function (e) {
+  $('.md-teaedit .md-confirm').click(function (e) {
     e.stopPropagation()
     let params = $('#edittea').serializeObject()
-    if (params.teacate === '0') {
-      $('#addtea .warningnull').css('opacity', '1')
+    if (params.teacate === '0' || params.briefIntro === '' || params.origin === '' || params.teaname === '') {
+      if(params.teacate === '0')
+      $('#edittea .warningnull').css('opacity', '1')
       return ''
     }
     if (!params.teaimgurl) {
@@ -115,23 +122,32 @@ $(function () {
     load()
   })
 
-  //覆盖图点击
-  $('.md-overlay, .md-close').click(function (e) {
+  //覆盖图和关闭点击
+  $('.md-overlay, .md-teaedit .md-close').click(function (e) {
     e.stopPropagation()
     $('.md-teaedit').removeClass('md-show')
   })
+  $('.md-overlay, .md-delete .md-close').click(function (e) {
+    e.stopPropagation()
+    $('.md-delete').removeClass('md-show')
+  })
 
   //删除
+  var idToDelete
   $('#lv, #hong, #bai, #huang').on('click', 'i.delete', function (e) {
     e.stopPropagation()
-    // 小技巧：删除前先隐藏对应元素，可防止重新渲染导致闪动
+    idToDelete = $(this).attr('data-id')
+    $('.md-delete').addClass('md-show')
+  })
+  $('.md-delete .md-confirm').click(function (e) {
+    e.stopPropagation()
+    // 删除前先隐藏对应元素，防止重新渲染导致闪动
     $(this).parent('.oneli').hide()
-    let idToDelete = $(this).attr('data-id')
-
     let data = getLocalStorage()
     const indexToDelete = data.findIndex(obj => obj.id == idToDelete);
     data.splice(indexToDelete, 1);
     saveData(data)
+    $('.md-delete').removeClass('md-show')
     load()
   })
 
@@ -155,7 +171,7 @@ $(function () {
     }
     data = getLocalStorage()
     $.each(data, function (i, n) {
-      $.get('../tpl/teali.ejs', function (rs) {
+      $.get('../template/teali.ejs', function (rs) {
         let li = ejs.compile(rs)(n)
         switch (n.teacate) {
           case '绿茶':
@@ -220,14 +236,5 @@ $(function () {
         clearInterval(timer);
       }
     }, 200);
-    //常驻的document点击，关闭所有面板
-    $(document).click(function (e) {
-      $(".tea").each(function (index, item) {
-        if ($(item).hasClass("current")) {
-          $('.tea').eq(index).click();
-        }
-      })
-      $('.chooseinfo').removeClass('chooseinfo')
-    })
   }
 })

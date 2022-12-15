@@ -1,0 +1,158 @@
+<!-- dialog -->
+<div class="md-modal md-delete">
+  <div class="md-content">
+    <h3>提示</h3>
+    <div class="md-tips">
+      ⬤ 将永久删除该事件，是否继续？
+    </div>
+    <div class="bn-group">
+      <a href="javascript:;" class="md-close">关闭</a>
+      <a href="javascript:;" class="md-confirm">确认</a>
+    </div>
+  </div>
+</div>
+
+<div class="md-modal md-teaedit">
+  <div class="md-content">
+    <h3>修改茶叶</h3>
+    <div class="md-form">
+      <form action="#" id="edittea">
+        <div class="leftform">
+          <div class="oneform">
+            <label for="e-teaname">茶叶名称: </label>
+            <input type="text" name="teaname" id="e-teaname" placeholder="输出茶叶名称">
+          </div>
+          <div class="oneform">
+            <label for="e-origin">茶叶产地: </label>
+            <input type="text" name="origin" id="e-origin" placeholder="输入茶叶产地">
+          </div>
+          <div class="oneform">
+            <label for="e-teaimgurl">茶叶图片: </label>
+            <input type="text" name="teaimgurl" id="e-teaimgurl" placeholder="输入图片URL(空则随机图片)">
+          </div>
+          <div class="oneform">
+            <label for="e-teacate">茶叶品种: </label>
+            <select id="e-teacate" name="teacate">
+              <option value="0">--请选择茶叶品种--</option>
+              <option>绿茶</option>
+              <option>红茶</option>
+              <option>白茶</option>
+              <option>黄茶</option>
+            </select>
+            <div class="warningnull">茶叶品种为必选项！</div>
+          </div>
+        </div>
+        <div class="rightform">
+          <div class="oneform">
+            <label for="e-briefIntro">茶叶简介: </label>
+            <textarea name="briefIntro" id="e-briefIntro" placeholder="请输入茶叶简介"></textarea>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="bn-group">
+      <a href="javascript:;" class="md-close">关闭</a>
+      <a href="javascript:;" class="md-confirm">确认</a>
+    </div>
+  </div>
+</div>
+<!-- 覆盖图 -->
+<div class="md-overlay"></div>
+
+<div class="seconNav">
+  <div class=" tea pannel" id="addpanel">
+    <h2>插入茶叶种类</h2>
+    <div class="line"></div>
+    <div class="detailCat">
+      <form action="#" id="addtea">
+        <div class="leftform">
+          <div class="oneform">
+            <label for="teaname">茶叶名称: </label>
+            <input type="text" name="teaname" id="teaname" placeholder="输出茶叶名称">
+          </div>
+          <div class="oneform">
+            <label for="origin">茶叶产地: </label>
+            <input type="text" name="origin" id="origin" placeholder="输入茶叶产地">
+          </div>
+          <div class="oneform">
+            <label for="teaimgurl">茶叶图片: </label>
+            <input type="text" name="teaimgurl" id="teaimgurl" placeholder="输入图片URL(空则随机图片)">
+          </div>
+          <div class="oneform">
+            <label for="teacate">茶叶品种: </label>
+            <select id="teacate" name="teacate">
+              <option value="0">--请选择茶叶品种--</option>
+              <option>绿茶</option>
+              <option>红茶</option>
+              <option>白茶</option>
+              <option>黄茶</option>
+            </select>
+            <div class="warningnull">茶叶品种为必选项！</div>
+          </div>
+        </div>
+        <div class="rightform">
+          <div class="oneform">
+            <label for="briefIntro">茶叶简介: </label>
+            <textarea name="briefIntro" id="briefIntro" placeholder="请输入茶叶简介"></textarea>
+          </div>
+        </div>
+      </form>
+      <a class="submit" href="javascript:;">提交</a>
+    </div>
+    <div class="line"></div>
+  </div>
+
+  <div class=" tea pannel">
+    <h2>绿茶</h2>
+    <div class="line"></div>
+    <div class="detailCat">
+      <ul id="lv">
+        <li>
+          <div class="oneCat chooseinfo">
+            <img class="singleimg" src="./uploads/teaCats/1.jpg" alt="">
+            <h3>西湖龙井</h3>
+            <div class="orgplace">产地:<span>杭州</span></div>
+            <a rel=noopener target="_blank"
+              href="https://baike.baidu.com/item/%E8%A5%BF%E6%B9%96%E9%BE%99%E4%BA%95/412851">点击查看详情</a>
+            <div class="infotext">
+              <h3>简介</h3>
+              <p>
+                西湖龙井茶其产于浙江省杭州市西湖龙井村周围群山，并因此得名，具有1200多年历史。
+              </p>
+            </div>
+          </div>
+        </li>
+
+      </ul>
+    </div>
+    <div class="line"></div>
+  </div>
+  <div class=" tea pannel">
+    <h2>红茶</h2>
+    <div class="line"></div>
+    <div class="detailCat">
+      <ul id="hong">
+      </ul>
+    </div>
+    <div class="line"></div>
+  </div>
+  <div class="tea pannel">
+    <h2>白茶</h2>
+    <div class="line"></div>
+    <div class="detailCat">
+      <ul id="bai">
+
+      </ul>
+    </div>
+    <div class="line"></div>
+  </div>
+  <div class="tea pannel">
+    <h2>黄茶</h2>
+    <div class="line"></div>
+    <div class="detailCat">
+      <ul id="huang">
+      </ul>
+    </div>
+    <div class="line"></div>
+  </div>
+</div>
