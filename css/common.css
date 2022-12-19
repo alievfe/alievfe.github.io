@@ -160,7 +160,7 @@ body {
     opacity: 0;
     border-bottom: 2px solid #000;
     width: 100%;
-    transition: opacity .4s, box-shadow .4s ,top .4s;
+    transition: opacity .4s, box-shadow .4s, top .4s;
 }
 
 .spin-begin {
@@ -257,7 +257,7 @@ body {
     visibility: visible;
 }
 
-.md-teaedit .md-content{
+.md-teaedit .md-content {
     transform: scale(0.8);
     opacity: 0;
     transition: opacity 0.4s, transform .4s, visibility .4s;
@@ -271,11 +271,13 @@ body {
 .md-delete {
     width: 35%;
 }
+
 .md-delete h3 {
     padding-left: 10px;
     text-align: left;
     color: #c54c3e;
 }
+
 .md-delete .md-tips {
     color: #c54c3e;
     font-size: 18px;
@@ -283,7 +285,8 @@ body {
     padding-bottom: 0;
     text-align: center;
 }
-.md-delete .md-content{
+
+.md-delete .md-content {
     transform: scale(0.8);
     opacity: 0;
     transition: opacity 0.4s, transform .4s, visibility .4s;
@@ -294,6 +297,37 @@ body {
     opacity: 1;
 }
 
+.spinner {
+    margin: 100px auto;
+    width: 90px;
+    height: 90px;
+    position: relative;
+    text-align: center;
+    -webkit-animation: rotate 2.0s infinite linear;
+    animation: rotate 2.0s infinite linear;
+}
+
+.dot1,
+.dot2 {
+    width: 60%;
+    height: 60%;
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    background-color: #67CF22;
+    border-radius: 100%;
+    -webkit-animation: bounce 2.0s infinite ease-in-out;
+    animation: bounce 2.0s infinite ease-in-out;
+    border-radius: 67% 0;
+
+}
+
+.dot2 {
+    top: auto;
+    bottom: 0px;
+    -webkit-animation-delay: -1.0s;
+    animation-delay: -1.0s;
+}
 
 ::-webkit-scrollbar {
     width: 10px;
@@ -440,5 +474,44 @@ body {
     100% {
         opacity: 1;
         transform: rotate(360deg);
+    }
+}
+
+@-webkit-keyframes rotate {
+    100% {
+        -webkit-transform: rotate(360deg)
+    }
+}
+
+@keyframes rotate {
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+@-webkit-keyframes bounce {
+
+    0%,
+    100% {
+        -webkit-transform: scale(0.0)
+    }
+
+    50% {
+        -webkit-transform: scale(1.0)
+    }
+}
+
+@keyframes bounce {
+
+    0%,
+    100% {
+        -webkit-transform: scale(0.0);
+        transform: scale(0.0);
+    }
+
+    50% {
+        -webkit-transform: scale(1.0);
+        transform: scale(1.0);
     }
 }

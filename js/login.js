@@ -36,7 +36,6 @@ $(function () {
         let allToAnimation = $('.login').find('*').not('.leftimg')
         allToAnimation.css('opacity', '0')
         allToAnimation.css('position', 'relative')
-        //animation
         let piMax = allToAnimation.length;
         let pi = 0;
         let timer = setInterval(function () {

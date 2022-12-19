@@ -25,57 +25,46 @@ $(function () {
         })
       })
     }
-    nowhash = location.hash
     const header = await jqAjaxP({ url: '../views/header.ejs' })
+    async function renderBase(target,router){
+      if(router !=='login'){
+        $('body').html(header)
+        $(target).html(`
+        <div class="spinner">
+          <div class="dot1"></div>
+          <div class="dot2"></div>
+        </div>`)
+      }
+      const html = await jqAjaxP({ url: `../views/${router}.ejs` })
+      $(target).html(html)
+      $('#viewstyle').replaceWith(`<link id="viewstyle" rel="stylesheet" href="./css/${router}.css">`)
+      $('#viewjs').replaceWith(`<script id="viewjs" src="./js/${router}.js"></script>`)
+    }
+    nowhash = location.hash
     switch (location.hash) {
       case '#/':
         location.hash = '#/login'
         break;
-      //登录页
       case '#/login':
-        const login = await jqAjaxP({ url: '../views/login.ejs' })
-        $('body').html(login)
-        $('#viewstyle').replaceWith(`<link id="viewstyle" rel="stylesheet" href="./css/login.css">`)
-        $('#viewjs').replaceWith(`<script id="viewjs" src="./js/login.js"></script>`)
+        renderBase('body','login')
         break;
-      // 主页
       case '#/home':
-        $('body').html(header) // 问题，后面每次都要去渲染头？封装一个函数，判断是否为空，为空才渲染
-        const home = await jqAjaxP({ url: '../views/home.ejs' })
-        //以下到时候也要封装一个函数
-        $('#center_body').html(home)
-        $('#viewstyle').replaceWith(`<link id="viewstyle" rel="stylesheet" href="./css/home.css">`)
-        $('#viewjs').replaceWith(`<script id="viewjs" src="./js/home.js"></script>`)
+        renderBase('#center_body','home')
         break;
       case '#/teas':
-        $('body').html(header)
-        const teas = await jqAjaxP({ url: '../views/teas.ejs' })
-        $('#center_body').html(teas)
-        $('#viewstyle').replaceWith(`<link id="viewstyle" rel="stylesheet" href="./css/teas.css">`)
-        $('#viewjs').replaceWith(`<script id="viewjs" src="./js/teas.js"></script>`)
+        renderBase('#center_body','teas')
         break;
       case '#/tec':
-        $('body').html(header)
-        const tec = await jqAjaxP({ url: '../views/tec.ejs' })
-        $('#center_body').html(tec)
-        $('#viewstyle').replaceWith(`<link id="viewstyle" rel="stylesheet" href="./css/tec.css">`)
-        $('#viewjs').replaceWith(`<script id="viewjs" src="./js/tec.js"></script>`)
+        renderBase('#center_body','tec')
         break;
       case '#/rec':
-        $('body').html(header)
-        const rec = await jqAjaxP({ url: '../views/rec.ejs' })
-        $('#center_body').html(rec)
-        $('#viewstyle').replaceWith(`<link id="viewstyle" rel="stylesheet" href="./css/rec.css">`)
-        $('#viewjs').replaceWith(`<script id="viewjs" src="./js/rec.js"></script>`)
+        renderBase('#center_body','rec')
         break;
       case '#/about':
-        $('body').html(header)
-        const about = await jqAjaxP({ url: '../views/about.ejs' })
-        $('#center_body').html(about)
-        $('#viewstyle').replaceWith(`<link id="viewstyle" rel="stylesheet" href="./css/about.css">`)
-        $('#viewjs').replaceWith(`<script id="viewjs" src="./js/about.js"></script>`)
+        renderBase('#center_body','about')
         break;
     }
+
   }
 
 

@@ -5,7 +5,6 @@ $(function () {
     });
     let flag = [1, 1, 1, 1];
     $(window).scroll(function () {
-        console.log('tec');
         $(".pannel").each(function (i, e) {
             if (flag[i] && $(document).scrollTop() + 600 >= $(e).offset().top) {
                 $('.pannel').eq(i).css({

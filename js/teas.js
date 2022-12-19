@@ -35,7 +35,7 @@ $(function () {
     $(this).addClass('chooseinfo')
   })
   //阻止a链接冒泡
-  $('.oneCat a').click(function (e) {
+  $('#lv, #hong, #bai, #huang').on('click', '.oneCat a', function (e) {
     e.stopPropagation();
   })
   //点击边上空白，li简介滑回
@@ -76,8 +76,6 @@ $(function () {
   $('#addpanel').click(function(){
     $('#addtea')[0].reset()
   })
-  /*dialog-modal*/
-  //modal
   $('.md-modal').click(function (e) {
     e.stopPropagation()
   })
@@ -141,7 +139,6 @@ $(function () {
   })
   $('.md-delete .md-confirm').click(function (e) {
     e.stopPropagation()
-    // 删除前先隐藏对应元素，防止重新渲染导致闪动
     $(this).parent('.oneli').hide()
     let data = getLocalStorage()
     const indexToDelete = data.findIndex(obj => obj.id == idToDelete);
@@ -159,7 +156,6 @@ $(function () {
 
   //加载数据
   function load() {
-    //遍历之前清空
     $('#lv, #hong, #bai, #huang').html('')
     let data
     if (getLocalStorage().length === 0) {
